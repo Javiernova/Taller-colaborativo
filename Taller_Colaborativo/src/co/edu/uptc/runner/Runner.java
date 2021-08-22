@@ -9,7 +9,7 @@ public class Runner {
 	public static void menu() {
 		String sentence="";
 		
-		Management lo = new Management();
+		Management mg = new Management();
 		int menu=0;
 		do {
 			
@@ -28,11 +28,11 @@ public class Runner {
 				break;
 			case 3:
 				sentence=JOptionPane.showInputDialog("escriba palabra u oracion a encriptar");
-				sentence=lo.encrypt(sentence);
+				sentence=mg.encrypt(sentence);
 				JOptionPane.showMessageDialog(null, sentence);
 				break;
 			case 4:
-				JOptionPane.showMessageDialog(null, lo.decrypt(sentence));
+				JOptionPane.showMessageDialog(null, mg.decrypt(sentence));
 				break;
 			case 5:
 				
@@ -43,7 +43,7 @@ public class Runner {
 				break;
 			case 7:
 				sentence=JOptionPane.showInputDialog("escriba palabra a intersectar");
-				JOptionPane.showMessageDialog(null, lo.intersection(sentence));
+				JOptionPane.showMessageDialog(null, mg.intersection(sentence));
 				break;
 			case 8:
 				
@@ -67,8 +67,7 @@ public class Runner {
 	}
 
 	public static void main(String[] args) {
-	menu();
-	
+		menu();
 
 	}
 

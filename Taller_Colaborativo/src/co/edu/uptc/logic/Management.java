@@ -1,14 +1,8 @@
 package co.edu.uptc.logic;
 
-/**
- * 
- * @author USUARIO
- *
- */
-
 public class Management {
 	
-	private static String CHAR_STRING;
+private static String CHAR_STRING;
 
 	
 	/**
@@ -61,4 +55,5 @@ public class Management {
 		return duplicate;
 	}
 	
+
 }
