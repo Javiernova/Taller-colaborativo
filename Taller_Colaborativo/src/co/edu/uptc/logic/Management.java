@@ -6,7 +6,8 @@ private static String CHAR_STRING;
 
 	
 	/**
-	 * Metodo el cual muestra los caracteres que se repiten en la cadena de caracteres
+	 * Metodo el cual muestra los caracteres encriptados de la cadena de caracteres
+	  ingresada por parametro
 	 * @param sentenc
 	 * @return string
 	 */
