@@ -2,8 +2,12 @@ package co.edu.uptc.logic;
 
 public class Management {
 	
-private static String CHAR_STRING;
-
+   private static String CHAR_STRING;
+     
+    public Management(String char_string) {
+    	
+    	CHAR_STRING=char_string;
+    }
 	
 	/**
 	 * Metodo el cual muestra los caracteres encriptados de la cadena de caracteres
@@ -43,11 +47,11 @@ private static String CHAR_STRING;
 	 */
 	
 	public String intersection(String sentence) {
-		String duple =sentence; 
+		 
 		String duplicate = "";
 		for (int i = 0; i < sentence.length(); i++) {
 			String ct = Character.toString(sentence.charAt(i));
-			if (duple.contains(ct)) {
+			if (CHAR_STRING.contains(ct)) {
 				if (!duplicate.contains(ct)) {
 					duplicate += ct;
 				}

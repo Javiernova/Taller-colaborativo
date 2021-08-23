@@ -8,8 +8,8 @@ public class Runner {
 	
 	public static void menu() {
 		String sentence="";
-		
-		Management mg = new Management();
+		String text=JOptionPane.showInputDialog("Digite cadena inmutable: ");
+		Management mg = new Management(text);
 		int menu=0;
 		do {
 			
