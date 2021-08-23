@@ -1,5 +1,11 @@
 package co.edu.uptc.logic;
 
+/*
+ *@author Javier Nova
+ *@author Laura Tamayo
+ *@author Sebastián Matallana
+ 
+*/
 public class Management {
 	/*
         + Cadena a usar inmutable
