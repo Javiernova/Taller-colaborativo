@@ -1,6 +1,6 @@
 # Taller-colaborativo
 
-##Autores 
+## Autores 
 - Javier Ramiro Nova Nuñez
 - Laura Vanessa Tamayo Pérez
 - Juan Sebastián Matallana Herrera
