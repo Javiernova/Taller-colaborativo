@@ -1,5 +1,10 @@
 package co.edu.uptc.logic;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.JOptionPane;
+
 /*
  *@author Javier Nova
  *@author Laura Tamayo
@@ -19,8 +24,8 @@ public class Management {
 		this.CHAR_STRING = CHAR_STRING;
 	}
 
-	/*
-     + MÃ©todo que consiste en convertir una frase es un nombre propio.
+	/**
+     + Metodo que consiste en convertir una frase es un nombre propio.
      + @return cadena como un nombre propio
      */
 	public String own_Name(){
@@ -56,8 +61,8 @@ public class Management {
 		return phrase;
 	}
 
-	/*
-     + MÃ©todo que busca una palabra dada y la cantidad de veces que esta repite.
+	/**
+     + Metodo que busca una palabra dada y la cantidad de veces que esta repite.
      + @return cantidad de veces encontrada la palabra en la cadena - aux
      */
 	public int findCharacterString(String word){
@@ -103,8 +108,8 @@ public class Management {
 	}
 
 
-    /*
-    + MÃ©todo para agregar un caracter segun la cantidad ed veces dada.
+    /**
+    + Metodo para agregar un caracter segun la cantidad ed veces dada.
     + Ya sea por izquierda o por derecha
     + @param character
     + @param quantify
@@ -126,7 +131,7 @@ public class Management {
 		return auxCharString;
 	}
 
-    /*
+    /**
     + Metodo que elimina el caracter otorgado en el runner, en toda la cadena
     + @param del_char
     + @return result
@@ -157,4 +162,87 @@ public class Management {
 		}
 		return duplicate;
 	}
+	
+	/**
+	 * metodo que muestra los caracteres que difieren en las dos cadenas
+	 * @param sentence 
+	 * @return string 
+	 */
+	
+	public String difference(String sentence) {
+		String different = "";
+		
+		for (int i = 0; i < CHAR_STRING.length(); i++) {
+			String diff = Character.toString(CHAR_STRING.charAt(i));
+		
+				if(!sentence.contains(diff)) {
+					different += diff;
+					
+				}
+			
+		}
+		return different;
+	}
+	
+	/**
+	 * metodo que permite borrar a la derecha o la izquierda, los caracteres de la entrada
+	 * @param sentence 
+	 * @return string
+	 */
+	
+	public String deleterightorfleft(String sentence,String direction) {
+	String supr = "";
+	String result="";
+	boolean num1 = true;	
+	if (direction=="right") {
+	for (int i = CHAR_STRING.length()-1; i >=0; i--) { 
+		supr+=CHAR_STRING.charAt(i);
+	}
+	for (int i = 0; i < CHAR_STRING.length(); i++) {
+		if (sentence.toLowerCase().indexOf(supr.toLowerCase().charAt(i))>=0 && num1) {
+		result+="";
+		}else {
+		num1=false;
+		result+=supr.charAt(i);
+		}		
+	}
+	supr="";
+	for (int i = result.length()-1; i >=0; i--) {
+		supr+=result.charAt(i);
+	 }
+	}else if(direction =="left") {
+			for (int i = 0; i < CHAR_STRING.length(); i++) {
+		if (sentence.toLowerCase().indexOf(CHAR_STRING.toLowerCase().charAt(i))>=0 && num1) {
+			supr+="";
+		}else {
+			num1=false;
+			supr+=CHAR_STRING.charAt(i);
+		}	
+	  }
+	}
+	return CHAR_STRING.length()>0?supr:"";
+	}
+	
+	/**
+	 * metodo que permite confirmar correos electrónicos
+	 * @param sentence,direction
+	 * @return string
+	 */
+	
+	public String validateEmailConfirmation(String sentence) {
+		String result = "";
+		Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+						+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+
+
+		Matcher mather = pattern.matcher(sentence);
+
+		if (mather.find() == true) {
+			result = "El email ingresado es válido.";
+		} else {
+			result = "El email ingresado es inválido.";
+		}return result;
+	}
 }
+
+

@@ -26,8 +26,8 @@ public class Runner {
 		do {
 			try {
 				menu = Integer.parseInt(JOptionPane.showInputDialog("1. Convertir en nombre propio el contenido de la cadena \n"
-						+ "2. Buscar palabra \n 3. Encriptar(m√©todo est√°tico) \n 4. Desencriptar (m√©todo est√°tico) \n 5. Llenar caracteres \n6. Borrar caracteres \n"
-						+ "7. Intersecci√≥n \n 8. Diferencia \n 9. Borrar caracteres iziquierda o derecha \n 10. Validar direcci√≥n de correo electronico \n 11. Salir"));
+						+ "2. Buscar palabra \n 3. Encriptar(metodo estatico) \n 4. Desencriptar (metodo estatico) \n 5. Llenar caracteres \n6. Borrar caracteres \n"
+						+ "7. IntersecciÛn \n 8. Diferencia \n 9. Borrar caracteres iziquierda o derecha \n 10. Validar direcciÛn de correo electronico \n 11. Salir"));
 				switch (menu) {
 					case 1:
 						JOptionPane.showMessageDialog(null, "Sentencia : " + sentence + "\n Sentencia modificada: " + mg.own_Name());
@@ -44,7 +44,7 @@ public class Runner {
 									auxP2 = true;
 								}
 							}else{
-								JOptionPane.showMessageDialog(null, "Volviendo al men√∫", "ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Volviendo al men˙", "ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
 								auxP2 = true;
 							}
 						}
@@ -73,7 +73,7 @@ public class Runner {
 												String address = "Derecha";
 												String character = JOptionPane.showInputDialog("Ingrese el caracter que se agregara a la sentencia indicada al inicio");
 												char character2 = character.charAt(0);
-												int limit = Integer.parseInt(JOptionPane.showInputDialog("Ingrese (en n√∫mero) de la cantidad de caracteres a a√±adir"));
+												int limit = Integer.parseInt(JOptionPane.showInputDialog("Ingrese (en n˙mero) de la cantidad de caracteres a a√±adir"));
 												JOptionPane.showMessageDialog(null, mg.fill_Characters(character2, limit,address));
 												menu2 = true;
 												break;
@@ -82,7 +82,7 @@ public class Runner {
 												String addressLeft = "Izquierda";
 												String characterLeft = JOptionPane.showInputDialog("Ingrese el caracter que se agregara a la sentencia indicada al inicio");
 												char character2Left = characterLeft.charAt(0);
-												int limitLeft = Integer.parseInt(JOptionPane.showInputDialog("Ingrese (en n√∫mero) de la cantidad de caracteres a a√±adir"));
+												int limitLeft = Integer.parseInt(JOptionPane.showInputDialog("Ingrese (en n˙mero) de la cantidad de caracteres a aÒadir"));
 												JOptionPane.showMessageDialog(null, mg.fill_Characters(character2Left, limitLeft,addressLeft));
 												menu2 = true;
 												break;
@@ -111,7 +111,7 @@ public class Runner {
 										continueP6 = false;
 									}
 								}else{
-									JOptionPane.showMessageDialog(null, "Volviendo al men√∫", "ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
+									JOptionPane.showMessageDialog(null, "Volviendo al men˙", "ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
 									continueP6 = false;
 								}
 							}catch (Exception e){
@@ -124,13 +124,29 @@ public class Runner {
 						JOptionPane.showMessageDialog(null, mg.intersection(sentence));
 						break;
 					case 8:
-
+                        sentence = JOptionPane.showInputDialog("escriba la palabra a diferenciar");
+                        JOptionPane.showMessageDialog(null, mg.difference(sentence));
 						break;
 					case 9:
-
+						boolean menu_2 = false; 
+						sentence = JOptionPane.showInputDialog("escriba la palabra ");
+						 int num =  Integer.parseInt(JOptionPane.showInputDialog("presione 1 para borrar de izquierda a derecha"
+						 		                              + "\n presione 2 para borrar de derecha a izquierda"));
+						    switch (num) {
+							case 1:
+								String direction = "right";
+								JOptionPane.showMessageDialog(null, mg.deleterightorfleft(sentence,direction));
+								menu_2=true;
+								break;
+							case 2:
+								direction = "left";
+								JOptionPane.showMessageDialog(null, mg.deleterightorfleft(sentence,direction));
+							}
+						 
 						break;
 					case 10:
-
+						sentence = JOptionPane.showInputDialog("escriba el email para su posterior confirmaciÛn");
+                        JOptionPane.showMessageDialog(null, mg.validateEmailConfirmation(sentence));
 						break;
 					case 11:
 						JOptionPane.showMessageDialog(null, "Ha salido del programa","ADVERTENCIA",JOptionPane.WARNING_MESSAGE);
