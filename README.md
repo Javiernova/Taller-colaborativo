@@ -1,4 +1,4 @@
-# Taller-colaborativo
+# Taller-colaborativo Grupo C
 
 ## Autores 
 - Javier Ramiro Nova Nuñez
